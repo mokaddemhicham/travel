@@ -1,0 +1,702 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Quicksand', sans-serif;
+}
+header{
+    position: relative;
+}
+li{
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+}
+nav{
+    position: absolute;
+    z-index: 1;
+    height: 95px;
+    border-bottom: 1px solid rgb(0, 0, 0,.09);
+    width: 100%;
+}
+.navbar{
+    width: 85%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar > a img{
+    width: 150px;
+}
+.navbar ul > li{
+    display: inline-block;
+    margin-left: 25px;
+}
+.navbar ul li:first-of-type{
+    margin-left: 0;
+}
+.navbar ul li a{
+    color: #fff;
+    font-weight: 500;
+    padding-bottom: 2px;
+    position: relative;
+}
+.navbar ul li a::after{
+    content: "";
+    width: 0%;
+    height: 1px;
+    background-color: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width .3s ease;
+}
+.navbar ul li a:hover::after{
+    width: 100%;
+}
+.navbar ul .tickets{
+    position: relative;
+}
+.navbar ul .tickets ul{
+    position: absolute;
+    background-color: #fff;
+    width: 200px;
+    top: 35px;
+    display: none;
+    transition: display .3s ease;
+}
+.navbar ul .tickets ul li{
+    display: block;
+    margin: 10px 20px;
+}
+.navbar ul .tickets ul li a{
+    color: #333;
+}
+.navbar ul .tickets:hover ul{
+    display: block;
+}
+.slides{
+    display: flex;
+    flex-wrap: wrap;
+}
+.slides .slide{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    
+}
+.slides .slide .background{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url(../img/C5gsPJq.jpg) no-repeat center;
+    background-size: cover;
+}
+.slides .slide .background::after{
+    content: "";
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: 100%;
+}
+.slides .slide .desc{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: #fff;
+}
+.slides .slide .desc::before{
+    content: "";
+    height: 120px;
+    width: 1px;
+    background-color: #fff;
+    position: absolute;
+    bottom: 160px;
+    left: 50%;
+    transform: scaleY(0);
+    transform-origin: top;
+    animation: animeline1 1s ease-in 0s both;
+}
+@keyframes animeline1{
+    from{
+        transform: scaleY(0);
+    }
+    to{
+        transform: scaleY(1);
+    }
+}
+.slides .slide .desc::after{
+    content: "";
+    height: 120px;
+    width: 1px;
+    background-color: #fff;
+    position: absolute;
+    top: 130px;
+    left: 50%;
+    transform: scaleY(0);
+    transform-origin: top;
+    animation: animeline2 .8s ease-in 1.6s both;
+}
+@keyframes animeline2{
+    from{
+        transform: scaleY(0);
+    }
+    to{
+        transform: scaleY(1);
+    }
+}
+.slides .slide .desc h4{
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+    letter-spacing: 1px;
+    line-height: 4px;
+    margin-bottom: 10px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: animeh4 .5s ease-out 1s both;
+}
+@keyframes animeh4{
+    from{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+.slides .slide .desc h2{
+    font-size: 53px;
+    font-weight: 400;
+    text-align: center;
+    line-height: 53px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: animeh2 .8s ease-out 1.5s both;
+}
+@keyframes animeh2{
+    from{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+.slides .slide .desc a{
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 13px;
+    padding: 15px 50px;
+    border: 1px solid #fff;
+    color: #fff;
+    text-transform: uppercase;
+    position: absolute;
+    bottom: -200px;
+    left: 50%;
+    transform: translateX(-50%) scale(0.9);
+    transition: all .5s ease;
+    animation: animea .8s ease 2s both;
+}
+.slides .slide .desc a:hover{
+    background-color: #FBCE00;
+    border-color: #FBCE00;
+}
+@keyframes animea{
+    from{
+        opacity: 0;
+        transform: translateX(-50%) scale(0.9);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(-50%) scale(1);
+    }
+}
+
+/* ---------- services ---------- */
+.container{
+    width: 85%;
+    margin: 0 auto;
+}
+.services{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 45px 0;
+}
+.services .service{
+    flex-basis: 20%;
+    text-align: center;
+}
+.services .service img{
+    width: 60px;
+    height: 60px;
+}
+.services .service .service-name{
+    color: #222;
+    font-size: 26px;
+    font-weight: 500;
+    margin: 15px 0 10px;
+}
+.services .service .service-desc{
+    color: #77778d;
+    font-size: 15px;
+}
+/* -------------- gallerie ------------- */
+.gallerie{
+    margin: 80px 0 50px;
+}
+.place{
+    display: flex;
+    flex-wrap: wrap;
+}
+.place-info , .img-place{
+    flex-basis: 50%;
+    height: 880px;
+    overflow: hidden;
+}
+.place-info{
+    background-color: #efefef;
+    padding: 35px;
+}
+.place-info div{
+    margin: 50% 0;
+}
+.place-info h2{
+    color: #222;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 1.3;
+    margin-bottom: 10px;
+}
+.place-info p{
+    color: #777;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 10px;
+}
+
+/* ---------- popular destinations --------- */
+
+.popular-destinations{
+    margin-bottom: 40px;
+}
+.popular-destinations .section-title{
+    text-align: center;
+    margin-bottom: 60px;
+}
+.popular-destinations .section-title h2{
+    font-weight: 500;
+    font-size: 36px;
+    color: #222;
+    margin-bottom: 10px;
+}
+.popular-destinations .section-title p{
+    font-weight: 400;
+    font-size: 16px;
+    color: #777;
+    margin-bottom: 10px;
+}
+.popular-destinations .destinations{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.popular-destinations .destinations .destination{
+    flex-basis: 23%;
+    margin-bottom: 25px;
+    position: relative;
+    cursor: pointer;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.popular-destinations .destinations .destination::before{
+    content: "";
+    background-color: #4484ceca;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    transition: all .25s ease-in;
+}
+.popular-destinations .destinations .destination:hover::before{
+    opacity: 1;
+}
+.popular-destinations .destinations .destination img{
+    width: 100%;
+    height: 100%;
+}
+.popular-destinations .destinations .destination .info{
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.popular-destinations .destinations .destination .info h3{
+    font-size: 22px;
+    color: #fff;
+    font-weight: 500;
+    opacity: 0;
+    transform: translateY(15px);
+    transition: all .25s ease-out;
+}
+.popular-destinations .destinations .destination:hover .info h3{
+    opacity: 1;
+    transform: translateY(0px);
+}
+.popular-destinations .destinations .destination .info a{
+    font-size: 16px;
+    color: #fff;
+    font-weight: 500;
+    position: relative;
+    opacity: 0;
+    transition: all .25s ease-in;
+}
+.popular-destinations .destinations .destination:hover .info a{
+    opacity: 1;
+}
+.popular-destinations .destinations .destination .info a::after{
+    content: "";
+    width: 0%;
+    height: 1px;
+    background-color:#FBCE00;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width .3s ease;
+}
+.popular-destinations .destinations .destination .info a:hover::after{
+    width: 100%;
+}
+
+/* ------------ break-city ------------ */
+
+.break-city{
+    width: 100%;
+    height: 250px;
+    text-align: center;
+    background: url(../img/amsterdam-1.jpg) no-repeat center;
+    background-attachment: fixed;
+}
+.break-city div{
+    height: 250px;
+    color: #fff;
+    padding: 72px 0;
+}
+.break-city div h2{
+    font-size: 45px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.break-city div p{
+    font-weight: 400;
+    line-height: 25px;
+}
+
+/* ----------- booking-widget ----------- */
+
+.booking-widget{
+    padding: 40px 0 50px;
+    background-color: #fbce00;
+}
+.chose-dest{
+    width: 100%;
+}
+.chose-dest label{
+    display: block;
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.chose-dest input{
+    font-family: 'Quicksand', sans-serif;
+    background-color: #fff;
+    color: #333;
+    font-size: 18px;
+    font-weight: 300;
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 3px;
+}
+.chose-dest input::placeholder{
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 300;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px;
+}
+.checkdate, .btn-submit{
+    display: inline-block;
+}
+.checkdate{
+    margin-right: 12px;
+}
+.checkdate h4 {
+    color: #fff;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+.checkdate select{
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    background-color: #fff;
+    height: 31px;
+    border: none;
+    border-radius: 3px;
+    padding: 0 7px;
+    margin-right: 5px;
+    appearance: none;
+    outline: none;
+}
+.btn-submit a{
+    background-color: #4484ce;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 7px;
+    text-align: center;
+    display: inline-block;
+    height: 38px;
+    line-height: 37px;
+    width: 90px;
+    box-shadow: 1px 1px 2px #999;
+}
+.btn-submit a:hover{
+    box-shadow: none;
+}
+
+/* ------------ news-travelling ------------ */
+
+.news-travelling{
+    background-color: #f2f2f2;
+}
+.news{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 40px 0;
+}
+.news h2{
+    font-weight: 500;
+    font-size: 36px;
+    color: #222;
+}
+.news p{
+    color: #777;
+    font-size: 16px;
+}
+.news .btn{
+    background-color: #FBCE00;
+    color: #222;
+    text-transform: uppercase;
+    padding: 12px 30px 12px 25px;
+    border-radius: 3px;
+    display: block;
+    transition: all .5s ease;
+    position: relative;
+}
+.news .btn:hover{
+    background-color: #ffdd43;
+}
+.news .btn::after{
+    content: "»";
+    position: absolute;
+    top: 50%;
+    right: 18px;
+    transform: translateY(-55%);
+}
+.news-travelling .articles{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    padding-bottom: 45px;
+}
+.news-travelling .articles .article{
+    flex-basis: 31%;
+    background-color: #fff;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0px 5px 5px -5px rgba(0,0,0,0.1);
+    transition: all .2s;
+}
+.news-travelling .articles .article:hover{
+    box-shadow: 0px 5px 25px 0px rgba(0,0,0,0.1);
+}
+.news-travelling .articles .article .img-article img{
+    width: 100%;
+}
+.news-travelling .articles .article .img-article{
+    height: max-content;
+    position: relative;
+    cursor: pointer;
+}
+.news-travelling .articles .article .img-article .blue-hover{
+    display: block;
+    background-color: #4484ceca;
+    width: 92%;
+    height: 86%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    transform: translate(-50%,-51%);
+    transition: all .3s ease-out;
+    border-radius: 3px;
+}
+.news-travelling .articles .article .img-article .blue-hover img{
+    width: 80px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.news-travelling .articles .article .img-article:hover .blue-hover{
+    opacity: 1;
+}
+.news-travelling .articles .article .info-article{
+    padding: 25px;
+}
+.news-travelling .articles .article .info-article .article-date{
+    display: block;
+    color: #898989;
+    font-size: 12px;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    font-weight: 400;
+}
+.news-travelling .articles .article .info-article .article-title{
+    color: #222;
+    font-size: 22px;
+    font-weight: 500;
+    transition: all .3s ease-in-out;
+}
+.news-travelling .articles .article .info-article .article-title:hover{
+    color: #4484ce;
+}
+
+/* ------------- footer ----------- */
+footer{
+    border: 1px solid #eee;
+}
+.menus{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 45px 0;
+}
+.menus ul{
+    flex-basis: 20%;
+}
+.menus ul .menu-title{
+    color: #222;
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 1.6;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+.menus ul li a{
+    color: #222;
+    margin-bottom: 15px;
+    line-height: 1.6;
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: uppercase;
+    position: relative;
+}
+.menus ul li a::after{
+    content: "";
+    width: 0%;
+    height: 1px;
+    background-color: #fbce00;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width .3s ease;
+}
+.menus ul li a:hover::after{
+    width: 100%;
+}
+
+/* ---------- copyright-sm --------- */
+
+.copyright-sm{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 25px 0;
+}
+.copyright-sm .copyright p{
+    color: #777;
+    font-weight: 400;
+}
+.copyright-sm .copyright p a{
+    color: #777;
+    position: relative;
+    transition: width .3s ease;
+}
+.copyright-sm .copyright p a::after{
+    content: "";
+    width: 0%;
+    height: 1px;
+    background-color: #fbce00;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width .3s ease;
+}
+.copyright-sm .copyright p a:hover{
+    color: #4484ce;
+}
+.copyright-sm .copyright p a:hover::after{
+    width: 100%;
+}
+.copyright-sm .sm{
+    font-size: 16px;
+}
+.copyright-sm .sm i{
+    margin-right: 30px;
+}
+.copyright-sm .sm .fa-facebook{
+    color: #1877f2;
+}
+.copyright-sm .sm .fa-twitter{
+    color: #55acee;
+}
+.copyright-sm .sm .fa-instagram{
+    color: #3f729b;
+}
+.copyright-sm .sm .fa-youtube-play{
+    color: #e52d27;
+    margin-right: 0px;
+}
+
+
+
+
+
+
+
+
+
